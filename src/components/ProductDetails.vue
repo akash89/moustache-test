@@ -3,6 +3,7 @@
         <img class="image" src="../assets/classic_tee.jpg"/>
         <div class="details">
             <h2 class="title">{{ productDetails[id].title }}</h2>
+
             <h4 class="price">{{ productDetails[id].price }}</h4>
             <p class="description">{{ productDetails[id].description }}</p>
             <div>
@@ -154,12 +155,14 @@ label span {
     border: 3px solid var(--dark-grey);
     padding: 10px 20px;
     color: var(--dark-grey);
-    background: transparent;
+    background-color: transparent;
     font-weight: 600;
     font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 .add-to-cart:hover {
-    background: var(--dark-grey);
+    background-color: var(--dark-grey);
     color: white;
 }
 .active {
@@ -188,6 +191,33 @@ label span {
         display:inline-block;
         width: 300px;
         vertical-align: top;
+    }
+}
+
+@media (min-width: 1366px) {
+    .product-details {
+        width: 800px;
+        padding: 40px 0;
+    }
+    .image {
+        width: 400px; 
+    }
+    .details {
+        float: right;
+    }
+    .price {
+        border-top: 1px solid #f6f6f6;
+        border-bottom: 1px solid #f6f6f6;
+        padding: 10px 0 8px 0;
+    }
+}
+
+@media (min-width: 1920px) {
+    .product-details {
+        width: 1000px;
+    }
+    .details {
+        width: 450px;
     }
 }
 </style>

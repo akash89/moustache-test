@@ -1,16 +1,14 @@
 <template>
-    <transition name="fade">
-        <div class="cart-wrapper" v-show="visibilityCart">
-            <div class="cart">
-                <CartItem
-                    v-for="(item, index) in cartItemsToDisplay"
-                    v-bind:item="item"
-                    v-bind:index="index"
-                    v-bind:key="index">
-                </CartItem>
-            </div>
+    <div class="cart-wrapper" v-show="visibilityCart">
+        <div class="cart">
+            <CartItem
+                v-for="(item, index) in cartItemsToDisplay"
+                v-bind:item="item"
+                v-bind:index="index"
+                v-bind:key="index">
+            </CartItem>
         </div>
-    </transition>
+    </div>
 </template>
 
 <script>
@@ -67,16 +65,9 @@ export default {
     padding: 15px;
 }
 
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .2s;
-}
-.fade-enter, .fade-leave-to {
-    opacity: 0;
-}
-
 @media (min-width: 768px) {
     .cart-wrapper {
-        width: auto;
+        width: 300px;
     }
 }
 </style>
